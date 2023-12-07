@@ -8,7 +8,6 @@ const UserSchema = new mongoose.Schema({
         unique: true
     },
     password: { type: String, required: true },
-   // wishlist: [{ type: mongoose.Schema.Types.ObjectId, ref: 'BoardGame' }]
 },
 {
     timestamps: true

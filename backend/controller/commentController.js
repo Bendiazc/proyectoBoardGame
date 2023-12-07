@@ -14,9 +14,9 @@ const postComment = async (req, res) => {
 }
 
 const findComment = async (req, res) => {
-    var id = req.params.idComment
-    var oneBoard = await Comments.findById(id);
-    res.json(oneBoard);
+    var board = req.params.gameId
+    var comment = await Comments.find({gameId: board});
+    res.status(200).json(comment);
     
 }
 

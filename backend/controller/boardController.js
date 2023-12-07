@@ -1,6 +1,6 @@
 import BoardGames from "../Models/boardModel.js"
 
-const postBoard = async (req, res) => {
+/*const postBoard = async (req, res) => {
     try {
         var boardData = req.body;
         var addBoard = await BoardGames.create(boardData)
@@ -11,7 +11,7 @@ const postBoard = async (req, res) => {
             "message": e.menssage
         })
     }
-};
+};*/
 
 const boardList = async (req, res) =>{
     var listBoard = await BoardGames.find()
@@ -19,16 +19,18 @@ const boardList = async (req, res) =>{
 };
 
 const findBoard = async (req, res) => {
-    var id = req.params.idBoard;
-    var oneBoard = await BoardGames.findById(id);
-    res.json(oneBoard);
+    var id = await  req.params.gameId;
+    //var oneBoard = await BoardGames.findById(id);
+    //res.json(oneBoard);
+    res.json(id)
+    
     
 };
 
-const eliminateBoard = async (req, res) => {
-    var id = req.params.idBoard;
+/*const eliminateBoard = async (req, res) => {
+    var id = req.params.gameId;
     await BoardGames.findByIdAndDelete(id);
     res.status(200).json();
-};
+};*/
 
-export {postBoard, boardList, findBoard, eliminateBoard}
+export {/*postBoard,*/ boardList, findBoard /*, eliminateBoard*/}
